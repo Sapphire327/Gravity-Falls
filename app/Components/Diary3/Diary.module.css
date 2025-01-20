@@ -1,0 +1,36 @@
+.diary{
+    color:white;
+    position: sticky;
+
+}
+.mainWrap{
+    padding-bottom: 100px;
+    background: url("/back.png") no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 80px 70px rgba(0,0,0,1)
+}
+.diaryWrap{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+    overflow: hidden;
+    top: 20px;
+}
+.description{
+    color: white;
+    max-width: 990px;
+    margin: auto;
+    font-size: 20px;
+    text-align: justify;
+    background-color: rgba(1, 1, 1, 0.6);
+    /*background: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 0);*/
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 30px 30px;
+    padding: 20px;
+}
+.description::after {
+    content: "\00a0";
+    white-space: nowrap;
+}

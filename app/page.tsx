@@ -1,95 +1,71 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, {useEffect, useRef} from "react";
+import styles from './page.module.css'
+import Lenis from 'lenis'
+import Image from "next/image"
+import GravityParallax from "@/app/Components/GravityParallax/GravityParallax";
+import HTMLFlipBook from 'react-pageflip';
+import Diary from "@/app/Components/Diary3/Diary";
+import Bill from "@/app/Components/Bill/Bill";
+export default function MultiLayerParallax() {
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    useEffect(()=>{
+        const lenis = new Lenis({
+            autoRaf: true,
+        });
+        return () => {
+            lenis.destroy();
+        };
+    },[])
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    return (
+        <div className={styles.main}>
+            <GravityParallax/>
+            <div className={styles.about}>
+                <motion.div initial={{opacity: 0}}
+                            className={styles.aboutBlock}
+                            whileInView={{
+                                opacity: 1,
+                                transition: {duration: 4}
+                            }}
+                >
+                    <Image src="/Mabel1.png" width={640} height={360} alt={"Mabel"}/>
+                    <p className={styles.description}>
+                        Диппер и Мэйбл, приезжают к своему чудаковатому дяде Стэну в
+                        какой-то захолустный городок под
+                        названием Гравити Фолз. Казалось бы, ничего особенного, но тут начинается настоящий трэш!
+                        Городок
+                        оказывается полным всяких мистических существ, секретов и тайн.
+
+                    </p>
+                </motion.div>
+                <motion.div className={styles.aboutBlock}
+                            initial={{opacity: 0}}
+                            whileInView={{
+                                opacity: 1,
+                                transition: {duration: 4}
+                            }}>
+                    <p className={styles.description}> Близняшки постоянно попадают в
+                        переделки, разгадывают загадки и сражаются с монстрами. А еще там куча смешных моментов и
+                        неожиданных поворотов сюжета. В общем, если любишь приключения, юмор и немного мистики, то этот
+                        мульт точно зайдет!</p>
+                    <Image src="/Dipper1.png" width={640} height={360} alt={"Dipper"}/>
+
+                </motion.div>
+            </div>
+
+            <div style={{marginTop:"150px"}}>
+                <Diary/>
+            </div>
+            <div style={{marginTop:"150px"}}>
+                <Bill/>
+            </div>
+
+            <div style={{height:"2000px"}}>
+
+            </div>
+
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
