@@ -19,10 +19,10 @@ const Diary:FC = () => {
     const ref = useRef(null);
     const book = useRef(null);
     const descriptionRef = useRef(null);
-    const bookInView =  useInView(ref,{amount:"all"})
+    const bookInView =  useInView(ref,{amount:"some"})
     const descriptionInView =  useInView(descriptionRef,{amount:"all"})
     useEffect(() => {
-        if(bookInView&&book.current)
+        if(bookInView&&book.current&&!descriptionInView)
             { // @ts-ignore
                 book.current.pageFlip().flipNext({corner: ['top', 'bottom']})
             }
@@ -39,7 +39,7 @@ const Diary:FC = () => {
                 Фолз задолго до приезда Диппера и Мэйбл. Эти записи помогают героям разбираться в том, что происходит вокруг них, и спасать город от различных угроз.
             </p>
             <div className={styles.diaryWrap} ref={ref}>
-                <HTMLFlipBook useMouseEvents={false} ref={book} drawShadow={false} className={styles.diary} width={500} height={700}>
+                <HTMLFlipBook   useMouseEvents={false} ref={book} drawShadow={false} className={styles.diary} width={602} height={700}>
                     <div className="demoPage"><Image width={602} height={784} alt={'page 1'} src={'/page1.png'}/></div>
                     <div className="demoPage"><Image width={602} height={784} alt={'page 2'} src={'/page2.png'}/></div>
                     <div className="demoPage"><Image width={602} height={784} alt={'page 3'} src={'/page3.png'}/></div>

@@ -8,6 +8,7 @@ import GravityParallax from "@/app/Components/GravityParallax/GravityParallax";
 import HTMLFlipBook from 'react-pageflip';
 import Diary from "@/app/Components/Diary3/Diary";
 import Bill from "@/app/Components/Bill/Bill";
+import clsx from "clsx";
 export default function MultiLayerParallax() {
 
     useEffect(()=>{
@@ -30,7 +31,7 @@ export default function MultiLayerParallax() {
                                 transition: {duration: 4}
                             }}
                 >
-                    <Image src="/Mabel1.png" width={640} height={360} alt={"Mabel"}/>
+                    <Image className={styles.MabelImg} src="/Mabel1.png" width={640} height={360} alt={"Mabel"}/>
                     <p className={styles.description}>
                         Диппер и Мэйбл, приезжают к своему чудаковатому дяде Стэну в
                         какой-то захолустный городок под
@@ -40,7 +41,7 @@ export default function MultiLayerParallax() {
 
                     </p>
                 </motion.div>
-                <motion.div className={styles.aboutBlock}
+                <motion.div className={clsx(styles.aboutBlock,styles.DipperBlock)}
                             initial={{opacity: 0}}
                             whileInView={{
                                 opacity: 1,
@@ -50,7 +51,7 @@ export default function MultiLayerParallax() {
                         переделки, разгадывают загадки и сражаются с монстрами. А еще там куча смешных моментов и
                         неожиданных поворотов сюжета. В общем, если любишь приключения, юмор и немного мистики, то этот
                         мульт точно зайдет!</p>
-                    <Image src="/Dipper1.png" width={640} height={360} alt={"Dipper"}/>
+                    <Image src="/Dipper1.png" className={styles.DipperImg} width={640} height={360} alt={"Dipper"}/>
 
                 </motion.div>
             </div>
@@ -62,9 +63,9 @@ export default function MultiLayerParallax() {
                 <Bill/>
             </div>
 
-            <div style={{height:"2000px"}}>
+            {/*<div style={{height:"2000px"}}>*/}
 
-            </div>
+            {/*</div>*/}
 
         </div>
     );

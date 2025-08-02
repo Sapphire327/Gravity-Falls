@@ -7,27 +7,54 @@
 }
 
 .about{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 100px;
-    margin-top: 100px;
+    padding: 0 2%;
+    margin-top: 2vw;
 }
 .aboutBlock{
     flex:100%;
     display: flex;
-    gap: 100px;
-
+    gap: 2%;
+}
+.MabelImg{
+    aspect-ratio: 350/197;
+}
+.DipperImg{
+    aspect-ratio: 1279/720;
 }
 .aboutBlock>img{
-    flex:  1;
+    object-fit: contain;
+    flex: 50% 0 0;
+    height: auto;
+    width: 50%;
 }
 .description{
+    flex: 100% 1 1;
+    width: 50%;
     color: white;
-    font-size: 20px;
+    font-size: 1.5vw;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 
     /*font-family: "--font-noto-sans", serif;*/
+}
+@media (max-width: 720px) {
+    .aboutBlock{
+        flex-direction: column;
+    }
+    .aboutBlock>img{
+        width: 100%;
+    }
+    .description{
+        width: 100%;
+        flex: 100% 1 1;
+        font-size: 5vw;
+        /*text-align: left;*/
+    }
+    .DipperBlock{
+        flex-direction: column-reverse;
+        margin-top: 20vw;
+
+    }
 }

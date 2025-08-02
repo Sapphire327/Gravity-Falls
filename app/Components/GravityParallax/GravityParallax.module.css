@@ -19,11 +19,26 @@
     justify-content: center;
 }
 .h1{
-    position: relative;
+    position: absolute;
+    bottom: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 15%;
+    right: 0;
+    text-align: center;
     z-index: 10;
     color: white;
-    font-size: 80px;
-    margin-top: 157px;
-    margin-left: 50px;
+    /*font-size: clamp(250px,1vw,5px);*/
+    font-size: clamp(50px,8vw,250px);
     font-weight: bold;
+}
+@media (max-width: 1080px) {
+    .h1{
+        bottom: 30%;
+    }
+}
+@media (max-width: 720px) {
+    .h1{
+        bottom: 20%;
+    }
 }

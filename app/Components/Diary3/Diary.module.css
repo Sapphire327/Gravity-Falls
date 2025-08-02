@@ -10,7 +10,7 @@
     box-shadow: inset 0 0 80px 70px rgba(0,0,0,1)
 }
 .diaryWrap{
-    margin-top: 50px;
+    margin: 50px auto auto;
     display: flex;
     justify-content: center;
     align-items: center;
