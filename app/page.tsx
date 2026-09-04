@@ -1,14 +1,16 @@
 'use client'
-import { motion, useScroll, useTransform } from "framer-motion";
-import React, {useEffect, useRef} from "react";
-import styles from './page.module.css'
+import Bill from "@/app/Components/Bill/Bill"
+import Diary from "@/app/Components/Diary3/Diary"
+import GravityParallax from "@/app/Components/GravityParallax/GravityParallax"
+import clsx from "clsx"
+import { motion } from "framer-motion"
 import Lenis from 'lenis'
+
 import Image from "next/image"
-import GravityParallax from "@/app/Components/GravityParallax/GravityParallax";
-import HTMLFlipBook from 'react-pageflip';
-import Diary from "@/app/Components/Diary3/Diary";
-import Bill from "@/app/Components/Bill/Bill";
-import clsx from "clsx";
+import { useEffect } from "react"
+import styles from './page.module.css'
+
+
 export default function MultiLayerParallax() {
 
     useEffect(()=>{
