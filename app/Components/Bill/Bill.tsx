@@ -1,8 +1,7 @@
+import { motion } from 'motion/react'
+import Image from 'next/image'
 import { FC } from 'react'
 import styles from './Bill.module.css'
-import clsx from "clsx";
-import Image from 'next/image'
-import { motion } from 'motion/react';
 const Bill:FC = () => {
     return (
         <div className={styles.wrap}>
@@ -16,7 +15,7 @@ const Bill:FC = () => {
                     repeat: Infinity,
                 }}>
                     <Image className={styles.BillFire} alt={''} src={'/fire.gif'} height={261} width={400}/>
-                    <Image alt={''} src={'/bill2.png'} height={529} width={646}/>
+                    <Image alt={''} src={'/bill2.webp'} height={529} width={646}/>
                 </motion.div>
 
             </div>

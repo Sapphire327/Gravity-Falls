@@ -1,5 +1,5 @@
 .fullimg,.partimg{
-    background-image: url("/gravityfull2.png");
+    background-image: url("/gravityfull2.webp");
     position: absolute;
     background-position: bottom;
     background-size: cover;
@@ -7,7 +7,7 @@
     z-index: 0;
 }
 .partimg{
-    background-image: url("/gravitypart.png");
+    background-image: url("/gravitypart.webp");
     z-index: 20;
 }
 .top{

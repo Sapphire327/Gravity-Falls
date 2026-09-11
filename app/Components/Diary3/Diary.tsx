@@ -1,9 +1,9 @@
-import React, {FC, useEffect, useRef} from 'react'
-import {IEventProps, IFlipSetting} from "react-pageflip/build/html-flip-book/settings";
-import dynamic from "next/dynamic";
-import styles from "./Diary.module.css"
+import { useInView } from "framer-motion"
+import dynamic from "next/dynamic"
 import Image from 'next/image'
-import {useInView, useScroll} from "framer-motion";
+import React, { FC, useEffect, useRef } from 'react'
+import { IEventProps, IFlipSetting } from "react-pageflip/build/html-flip-book/settings"
+import styles from "./Diary.module.css"
 interface HTMLFlipPageOverride extends Partial<IFlipSetting & IEventProps> {
     className?: string
     style?: React.CSSProperties
@@ -40,10 +40,10 @@ const Diary:FC = () => {
             </p>
             <div className={styles.diaryWrap} ref={ref}>
                 <HTMLFlipBook   useMouseEvents={false} ref={book} drawShadow={false} className={styles.diary} width={602} height={700}>
-                    <div className="demoPage"><Image width={602} height={784} alt={'page 1'} src={'/page1.png'}/></div>
-                    <div className="demoPage"><Image width={602} height={784} alt={'page 2'} src={'/page2.png'}/></div>
-                    <div className="demoPage"><Image width={602} height={784} alt={'page 3'} src={'/page3.png'}/></div>
-                    <div className="demoPage"><Image width={602} height={784} alt={'page 4'} src={'/page4.png'}/></div>
+                    <div className="demoPage"><Image width={602} height={784} alt={'page 1'} src={'/page1.webp'}/></div>
+                    <div className="demoPage"><Image width={602} height={784} alt={'page 2'} src={'/page2.webp'}/></div>
+                    <div className="demoPage"><Image width={602} height={784} alt={'page 3'} src={'/page3.webp'}/></div>
+                    <div className="demoPage"><Image width={602} height={784} alt={'page 4'} src={'/page4.webp'}/></div>
                 </HTMLFlipBook>
             </div>
         </div>

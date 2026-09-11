@@ -33,7 +33,7 @@ export default function MultiLayerParallax() {
                                 transition: {duration: 4}
                             }}
                 >
-                    <Image className={styles.MabelImg} src="/Mabel1.png" width={640} height={360} alt={"Mabel"}/>
+                    <Image className={styles.MabelImg} src="/Mabel1.webp" width={640} height={360} alt={"Mabel"}/>
                     <p className={styles.description}>
                         Диппер и Мэйбл, приезжают к своему чудаковатому дяде Стэну в
                         какой-то захолустный городок под
@@ -53,7 +53,7 @@ export default function MultiLayerParallax() {
                         переделки, разгадывают загадки и сражаются с монстрами. А еще там куча смешных моментов и
                         неожиданных поворотов сюжета. В общем, если любишь приключения, юмор и немного мистики, то этот
                         мульт точно зайдет!</p>
-                    <Image src="/Dipper1.png" className={styles.DipperImg} width={640} height={360} alt={"Dipper"}/>
+                    <Image src="/Dipper1.webp" className={styles.DipperImg} width={640} height={360} alt={"Dipper"}/>
 
                 </motion.div>
             </div>
